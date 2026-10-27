@@ -32,7 +32,8 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
     // Редактор кода с подсветкой
-    implementation("io.github.rosemoe.sora-editor:editor:0.23.4")
+    implementation("io.github.Rosemoe.sora-editor:editor:0.23.4")
+    implementation("io.github.Rosemoe.sora-editor:language-java:0.23.4")
     // VSIX-архивы — это zip
     implementation("org.apache.commons:commons-compress:1.26.2")
     // JS-движок для запуска кода
