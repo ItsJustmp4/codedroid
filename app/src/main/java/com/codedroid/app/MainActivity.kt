@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val openFiles = mutableListOf<File>()
-    private val rootDir: File get() =
+    private var rootDir: File get() =
         Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS)
 
     override fun onCreate(savedInstanceState: Bundle?) {
