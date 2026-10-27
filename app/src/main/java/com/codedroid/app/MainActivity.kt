@@ -54,16 +54,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun refreshFileList() {
-        val files = rootDir.listFiles()?.sortedBy { !it.isDirectory }
-            ?.map { (if (it.isDirectory) "📁 " else "📄 ") + it.name } ?: emptyList()
+        val sorted = rootDir.listFiles()?.sortedBy { !it.isDirectory } ?: emptyList()
+        val names = sorted.map { (if (it.isDirectory) "📁 " else "📄 ") + it.name }
         binding.fileList.adapter = ArrayAdapter(
-            this, android.R.layout.simple_list_item_1, files
+            this, android.R.layout.simple_list_item_1, names
         )
         binding.fileList.setOnItemClickListener { _, _, i, _ ->
-            val f = rootDir.listFiles()?.sortedBy { !it.isDirectory }?.get(i) ?: return@setOnItemClickListener
-            if (f.isDirectory) { refreshFileList(); return@setOnItemClickListener }
-            openFile(f)
-            binding.drawer.closeDrawer(androidx.core.view.GravityCompat.START)
+            val f = sorted[i]
+            if (f.isDirectory) {
+                rootDir = f
+                refreshFileList()
+            } else {
+                openFile(f)
+            }
         }
     }
 
