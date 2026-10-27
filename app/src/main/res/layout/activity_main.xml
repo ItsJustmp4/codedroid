@@ -29,9 +29,9 @@
             app:menu="@menu/bottom_menu" />
     </LinearLayout>
 
-    <ListView android:id="@+id/fileList"
+    <ListView
         android:id="@+id/fileList"
-        android:layout_width="280dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="?android:attr/colorBackgroundFloating" />
