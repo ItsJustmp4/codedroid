@@ -29,7 +29,7 @@
             app:menu="@menu/bottom_menu" />
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
+    <ListView android:id="@+id/fileList"
         android:id="@+id/fileList"
         android:layout_width="280dp"
         android:layout_height="match_parent"
